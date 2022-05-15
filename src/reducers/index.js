@@ -1,6 +1,5 @@
 import { combineReducers } from "redux";
 import booksResultsReducer from "./booksResultsReducer";
-import myBooksReducer from "./myBooksReducer";
 import booksListReducer from "./booksListReducer";
 import myBooksReducerCopy from "./myBooksReducerCopy";
 

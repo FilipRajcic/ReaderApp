@@ -35,23 +35,10 @@ const MyBooksScreen = (props) => {
     return <div>Please search and add your favorite books</div>;
   };
 
-  const renderTry = () => {
-    return (
-      <div>
-        <select>
-          <option selected={false}>1</option>
-          <option>2</option>
-          <option selected={true}>3</option>
-          <option>4</option>
-        </select>
-      </div>
-    );
-  };
   return (
     <div>
       {renderSwitchMyList()}
       {renderMyBooksList()}
-      {/* {renderTry()} */}
       {props.showModal.show ? <Modal /> : null}
     </div>
   );
