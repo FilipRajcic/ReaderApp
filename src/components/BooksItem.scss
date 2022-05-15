@@ -1,0 +1,87 @@
+.books__item {
+  height: 20rem;
+  margin-bottom: 2rem;
+  background-color: #eee;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    width: 100%;
+  }
+
+  &__image {
+    margin: 0 2rem;
+    border-radius: 0.5rem;
+    height: 15rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: black;
+  }
+  &__author {
+    font-size: 1.8rem;
+    color: black;
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    margin: 1rem 0;
+  }
+  &__left {
+    height: 15rem;
+  }
+
+  &__right {
+    height: 15rem;
+    width: 100%;
+  }
+
+  &__button {
+    border: none;
+    padding: 1rem 2rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: all 0.2s;
+
+    &--add {
+      background-color: transparent;
+      border: 0.2rem solid green;
+
+      &:hover {
+        background-color: green;
+        color: white;
+      }
+    }
+    &--remove {
+      background-color: transparent;
+      border: 0.2rem solid orangered;
+
+      &:hover {
+        background-color: orangered;
+        color: white;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  &--full {
+    color: green;
+  }
+  &--empty {
+    color: green;
+  }
+}
+
+.center {
+  margin-left: auto;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
