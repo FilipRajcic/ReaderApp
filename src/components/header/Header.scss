@@ -1,11 +1,27 @@
 .header {
   display: flex;
-  width: 100vw;
   height: 7rem;
-  background-color: #222;
+  background-color: #222831;
   align-items: center;
 
   &__logo {
+    margin-left: 10rem;
     height: 5rem;
+  }
+
+  &__nav {
+    margin: 10rem;
+    &__link {
+      color: white;
+      font-weight: 500;
+      font-size: 1.8rem;
+      text-decoration: none;
+      border-bottom: none;
+      transition: all 0.2;
+      padding-bottom: 0.5rem;
+      &:hover {
+        border-bottom: 2px solid #4cd137;
+      }
+    }
   }
 }

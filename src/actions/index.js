@@ -6,29 +6,35 @@ import {
   SELECT_BOOK_LIST,
   SHOW_MODAL,
   HIDE_MODAL,
+  SELECT_BOOK,
+  ADD_DESCRIPTION,
 } from "./types";
+// importing all my types
 
 import books from "../api/books";
-// Making books fetch action
+// importing books for ajax calls
+
+// Making books fetch action (with redux thunk)
 export const fetchBooksResults = (term) => {
   return async (dispatch) => {
+    // fetching books from openlibrary
     const response = await books.get(`/search.json?q=${term}`);
+
+    // dispatching it and senging it to reducer
     dispatch({ type: FETCH_BOOKS, payload: response.data.docs });
   };
 };
 
-// export const clearBooksResults = () => {
-//   return { type: "CLEAR_BOOKS" };
-// };
-// Adding books to myBooks state
+// Adding books to currentList books state
 export const addBook = (book, currentList) => {
   return { type: ADD_BOOK, payload: { book, currentList } };
 };
-// Removing books from myBooks state
+// Removing books from currentList state
 export const removeBook = (book, currentList) => {
   return { type: REMOVE_BOOK, payload: { book, currentList } };
 };
 
+// making (adding) read book in currentList state
 export const addReadBook = (book, currentList) => {
   return {
     type: ADD_READ_BOOK,
@@ -36,31 +42,30 @@ export const addReadBook = (book, currentList) => {
   };
 };
 
+// adding description to book that is in currentList
+export const addDescription = (book, currentList, description) => {
+  return {
+    type: ADD_DESCRIPTION,
+    payload: { book: book, currentList: currentList, description: description },
+  };
+};
+
+// selecting currentList
 export const selectBookList = (bookListName) => {
   return { type: SELECT_BOOK_LIST, payload: bookListName };
 };
 
+// setting showModal state to true so it can show
 export const showModal = (book) => {
   return { type: SHOW_MODAL, payload: book };
 };
+
+// setting showModal to false
 export const hideModal = () => {
   return { type: HIDE_MODAL };
 };
 
-// // Adding books to myBooks state
-// export const addBook = (book) => {
-//   return { type: ADD_BOOK, payload: book };
-// };
-// // Removing books from myBooks state
-// export const removeBook = (bookKey) => {
-//   return { type: REMOVE_BOOK, payload: bookKey };
-// };
-
-// export const addReadBook = (bookKey) => {
-//   return { type: ADD_READ_BOOK, payload: bookKey };
-// };
-
-// export const selectBookList = (bookListName) => {
-//   console.log("actions open");
-//   return { type: SELECT_BOOK_LIST, payload: bookListName };
-// };
+// selecting book that need to be shown in BookScreenDetails
+export const selectBook = (book) => {
+  return { type: SELECT_BOOK, payload: book };
+};

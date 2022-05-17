@@ -1,10 +1,11 @@
 import { FETCH_BOOKS } from "../actions/types";
 
-const booksResultsReducer = (state = null, action) => {
+// reducer for my fetchBooksResults action
+const booksResultsReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_BOOKS:
+      // putting all my books results in state
       return action.payload;
-
     default:
       return state;
   }

@@ -1,0 +1,70 @@
+.book__detail {
+  background-color: #455163;
+  display: flex;
+  margin-top: 2rem;
+  &__left {
+    margin: 0 2rem;
+  }
+  &__right {
+    width: 30rem;
+  }
+  &__image {
+    border-radius: 2rem;
+  }
+  &__header {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+  }
+  &__paragraph {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+  &__description {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: white;
+
+    margin-left: 2rem;
+  }
+  &__form {
+    width: 60rem;
+    margin-left: 2rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    &__label {
+      font-size: 1.5rem;
+      color: white;
+    }
+    &__textarea {
+      width: 100%;
+      height: 10rem;
+      background-color: #222831;
+      border: 1px solid white;
+      padding-left: 2rem;
+      color: white;
+      font-family: "Roboto Flex", sans-serif;
+    }
+
+    &__button {
+      align-self: flex-start;
+      flex: 0;
+      padding: 1rem 3rem;
+
+      padding: 1rem 3rem;
+      margin-top: 1rem;
+      color: white;
+      background-color: #222831;
+      border: 1px solid #4cd137;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        background-color: #4cd137;
+        color: white;
+      }
+    }
+  }
+}

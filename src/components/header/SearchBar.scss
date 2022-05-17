@@ -1,22 +1,49 @@
 .search__bar {
   margin: 0 auto;
+  &__form {
+    width: 60rem;
+    position: relative;
+  }
   &__field {
-    width: 50rem;
-    height: 4rem;
-    padding-left: 2rem;
+    margin-top: 0rem;
+    width: 100%;
+    height: 5rem;
+    padding-left: 5rem;
     border: none;
-    border: 2px solid #777;
+    border: 1px solid white;
+    border-radius: 5rem;
+    background-color: #222831;
+    color: white;
 
     &:focus {
       outline: none;
-      border: 2px solid red;
+      border: 1px solid #4cd137;
+      width: 60rem;
+    }
+    &::placeholder {
+      color: #aaa;
     }
   }
   &__button {
-    height: 4rem;
-    width: 8rem;
+    position: absolute;
+    top: 0%;
+    left: 96%;
+    margin-top: 0.5rem;
     cursor: pointer;
-    background-color: #777;
+    background-color: #222831;
     border: none;
+    margin-left: -2.5rem;
+  }
+
+  &__icon {
+    margin-top: 0.8rem;
+    font-size: 2.5rem;
+    background-color: transparent;
+    color: white;
+    &:hover {
+      transform: scale(1.05);
+
+      color: #4cd137;
+    }
   }
 }

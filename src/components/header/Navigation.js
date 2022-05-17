@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./Header.scss";
+// My navigation in the header
 const Navigation = () => {
   return (
-    <div>
-      <Link to={`/`}>My books</Link>
+    <div className="header__nav">
+      <Link className="header__nav__link" to={`/`}>
+        My books
+      </Link>
     </div>
   );
 };

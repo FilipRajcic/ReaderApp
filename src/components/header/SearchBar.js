@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { fetchBooksResults } from "../../actions";
 import { connect } from "react-redux";
 
+// import search Icon
+import { BiSearch } from "react-icons/bi";
+
 import "./SearchBar.scss";
 import history from "../../history";
 
@@ -16,16 +19,17 @@ const SearchBar = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
     // if term is empty string there should not be any ajax call
-    if (term) props.fetchBooksResults(term);
+    if (term) props.fetchBooksResults(`${term}`);
     // After search we want to clear our input field
     setTerm("");
+    // Go to another Page where Book Results will show
     history.push(`/screen/results`);
   };
 
   return (
     <div className="search__bar">
       <form className="search__bar__form" onSubmit={onSubmit}>
-        <div>
+        <>
           <input
             className="search__bar__field"
             type="text"
@@ -33,13 +37,15 @@ const SearchBar = (props) => {
             value={term}
             onChange={onInputChange}
           />
-          <button className="search__bar__button">Search!</button>
-        </div>
+          <button className="search__bar__button">
+            <BiSearch className="search__bar__icon" />
+          </button>
+        </>
       </form>
     </div>
   );
 };
-// Getting books Obj from our Redux state
+// Getting booksResult Obj from our Redux state
 const mapStateToProps = (state) => {
   return { booksResults: state.booksResults };
 };

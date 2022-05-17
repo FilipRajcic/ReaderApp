@@ -1,0 +1,31 @@
+.mybooks {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    &__label {
+      font-size: 2rem;
+      color: white;
+    }
+    &__select {
+      background-color: #222831;
+      color: white;
+      border-radius: 0.5rem;
+      padding: 1rem 3rem;
+      border: 1px solid white;
+      font-size: 1.5rem;
+      &:focus {
+        border: 1px solid #4cd137;
+      }
+    }
+    &__option {
+      font-size: 1.5rem;
+    }
+  }
+  &__text {
+    color: white;
+    font-size: 1.5rem;
+  }
+}
